@@ -3,3 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  ul
+    each message in messages
+      li
+        strong #{message.user}:
+        | #{message.text}
+        br
+        small #{message.added.toLocaleString()}
+  
+  a(href='/new') New Message
